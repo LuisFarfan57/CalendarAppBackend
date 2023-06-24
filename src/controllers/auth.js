@@ -70,8 +70,13 @@ const loginUsuario = async (req = request, res = response) => {
   }
 }
 
-const revalidarToken = (req = request, res = response) => {
-  return res.json({ message: 'Hola' })
+const revalidarToken = async (req = request, res = response) => {
+  const uid = req.uid
+  const name = req.name
+
+  const newToken = await generateJWT({ id: uid, name })
+
+  return res.json({ ok: true, token: newToken })
 }
 
 module.exports = {
