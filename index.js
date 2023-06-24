@@ -1,10 +1,14 @@
 const express = require('express')
+const { dbConnection } = require('./src/config/database')
 require('dotenv').config()
 
 const port = process.env.PORT
 
 // Crear el server
 const app = express()
+
+// Base de datos
+dbConnection()
 
 app.use(express.json())
 
