@@ -4,8 +4,15 @@
   "description": "Backend app for CalendarApp",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js",
+    "start": "node index.js"
   },
-  "author": "",
-  "license": "ISC"
+  "author": "LuisFarfan57 <luise.prado99@hotmail.com>",
+  "license": "ISC",
+  "repository": "https://github.com/LuisFarfan57/CalendarAppBackend.git",
+  "devDependencies": {},
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
