@@ -1,16 +1,18 @@
 const express = require('express')
+require('dotenv').config()
+
+const port = process.env.PORT
 
 // Crear el server
 const app = express()
-const port = 4000
 
-app.get('/', (req, res) => {
-  return res.json({ message: 'Hola' })
-})
+app.use(express.json())
 
+// Directorio publico
+app.use(express.static('public'))
 
-
-
+// Rutas
+app.use('/api/auth', require('./src/routes/auth'))
 
 // Escuchar peticiones
 app.listen(port, () => {
