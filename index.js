@@ -23,6 +23,11 @@ app.use(express.static('public'))
 app.use('/api/auth', require('./src/routes/auth'))
 app.use('/api/events', require('./src/routes/events'))
 
+// Para que funcione el frontend en la carpeta public
+app.get('*', (req, res) => {
+  res.sendFile(__dirname + '/public/index.html')
+})
+
 // Escuchar peticiones
 app.listen(port, () => {
   console.log(`Listening on port ${port}...`)
